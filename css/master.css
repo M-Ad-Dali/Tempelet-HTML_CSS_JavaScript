@@ -1,0 +1,44 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+/* Start Landig */
+.landing {
+  min-height: 100vh;
+  background-image: url('../imges/landing/1.jpg');
+  background-size: cover;
+  position: relative;
+}
+.landing .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  color: white;
+  padding: 10px;
+}
+.header .logo {
+  width: 100px;
+  padding: 15px;
+  font-weight: bold;
+}
+.header .links {
+  list-style: none;
+  width: 100%;
+  text-align: right;
+  padding-left: 0;
+  padding-right: 20px;
+  font-size: 15px;
+}
+.header .links li {
+  display: inline-block;
+  margin-left: 10px;
+}
+/* End Landig */
