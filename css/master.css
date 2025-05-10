@@ -1,12 +1,16 @@
+:root {
+  --main-color: #430801;
+}
 body {
   font-family: "Open Sans", sans-serif;
 }
 /* Start Landig */
 .landing {
   min-height: 100vh;
-  background-image: url('../imges/landing/1.jpg');
+  background-image: url('../imgs/landing/01.jpg');
   background-size: cover;
   position: relative;
+  transition: 0.8s;
 }
 .landing .overlay {
   background-color: rgba(0, 0, 0, 0.6);
@@ -26,6 +30,7 @@ body {
 }
 .header .logo {
   width: 100px;
+  font-size: 20px;
   padding: 15px;
   font-weight: bold;
 }
@@ -40,5 +45,43 @@ body {
 .header .links li {
   display: inline-block;
   margin-left: 10px;
+}
+.header .links li a {
+  color: #FFF;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.header .links li a:hover, 
+.header .links li a.active {
+  color: var(--main-color);
+  font-size: 16px;
+  font-weight: bold;
+}
+.introduction {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #FFF;
+  text-align: center;
+}
+.introduction h1 {
+  font-size: 34px;
+  margin: 0 0 12px;
+}
+.introduction h1 span {
+  color: var(--main-color);
+  text-shadow: -2px 2px black;
+  background-color: #ffffff59;
+  padding: 0px 10px 5px;
+  font-size: 40px;
+  border-radius: 20%;
+}
+.introduction p {
+  line-height: 1.6;
+  font-size: 14px;
+  margin: 30px;
+  font-weight: bold;
 }
 /* End Landig */
