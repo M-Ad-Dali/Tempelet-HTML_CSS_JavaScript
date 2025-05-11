@@ -4,6 +4,82 @@
 body {
   font-family: "Open Sans", sans-serif;
 }
+/* Start settings Box */
+.settings-box {
+  position: fixed;
+  left: -200px;
+  top: 0;
+  background-color: var(--main-color);
+  width: 200px;
+  z-index: 1000;
+  min-height: 100vh;
+  transition: 0.3s;
+}
+.settings-box .toggle-settings {
+  position: absolute;
+  right: -30px;
+  top: 100px;
+  background-color: var(--main-color);
+  text-align: center;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+.settings-box.open {
+  left: 0;
+}
+.settings-box .toggle-settings .gear {
+  width: 30px;
+  padding: 8px 0;
+  color: #FFF;
+}
+.settings-box .option-box{
+  padding: 20px;
+}
+.settings-box .option-box h4{
+  margin: 0;
+  color: #999;
+  text-align: center;
+}
+.settings-box .option-box .colors-list{
+  list-style: none;
+  background-color: #ffffffdc;
+  height: 40px;
+  text-align: center;
+  align-content: center;
+  border-radius: 10px;
+  padding: 0;
+  
+}
+.settings-box .option-box .colors-list li{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.5;
+  display: inline-block;
+  transition: 0.3s;
+}
+.settings-box .option-box .colors-list li.active{
+  opacity: 1;
+  border: 1px solid black;
+  padding: 1px;
+}
+.settings-box .option-box .colors-list li:first-child {
+  background-color: #430801;
+}
+.settings-box .option-box .colors-list li:nth-child(2) {
+  background-color: #1a1a1a;
+}
+.settings-box .option-box .colors-list li:nth-child(3) {
+  background-color: #E65100;
+}
+.settings-box .option-box .colors-list li:nth-child(4) {
+  background-color: #582b1d;
+}
+.settings-box .option-box .colors-list li:nth-child(5) {
+  background-color: #8b4a1b;
+}
+/* End settings Box */
 /* Start Landig */
 .landing {
   min-height: 100vh;

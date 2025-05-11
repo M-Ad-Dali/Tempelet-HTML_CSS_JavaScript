@@ -1,3 +1,34 @@
+// Toggle Spin Class On Icon
+document.querySelector(".toggle-settings .gear").onclick = function () {
+
+  // Toggle Class Fa-spin For Rotation On Self
+  this.classList.toggle("fa-spin");
+
+  // Toggle Class Open On Main
+  document.querySelector(".settings-box").classList.toggle("open");
+
+};
+
+// Switch Colors
+const colorsLi = document.querySelectorAll(".colors-list li");
+
+// Loop On All List Itmes
+colorsLi.forEach(li => {
+  
+  // Click On Every List Itme
+  li.addEventListener("click", (e) => {
+
+    // Remove Class Active
+    // li.classList.remove("active");
+
+    // Add Class Active
+    // li.classList.add("active");
+
+    // Set Color On Rot
+    document.documentElement.style.setProperty('--main-color', e.target.dataset.color);
+  });
+});
+
 // Select Landing For Element
 let landingPage = document.querySelector(".landing");
 
