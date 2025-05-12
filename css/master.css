@@ -7,10 +7,10 @@ body {
 /* Start settings Box */
 .settings-box {
   position: fixed;
-  left: -200px;
+  left: -250px;
   top: 0;
-  background-color: var(--main-color);
-  width: 200px;
+  background-color: #ffffff59;
+  width: 250px;
   z-index: 1000;
   min-height: 100vh;
   transition: 0.3s;
@@ -19,7 +19,7 @@ body {
   position: absolute;
   right: -30px;
   top: 100px;
-  background-color: var(--main-color);
+  background-color: #ffffff59;
   text-align: center;
   border-radius: 0 8px 8px 0;
   cursor: pointer;
@@ -30,25 +30,27 @@ body {
 .settings-box .toggle-settings .gear {
   width: 30px;
   padding: 8px 0;
-  color: #FFF;
+  color: var(--main-color);
 }
 .settings-box .option-box{
-  padding: 20px;
+  padding: 10px;
+  background-color: #eee;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
 }
 .settings-box .option-box h4{
-  margin: 0;
-  color: #999;
-  text-align: center;
+  color: var(--main-color);
+  margin: 5px;
+  font-size: 16px;
 }
 .settings-box .option-box .colors-list{
   list-style: none;
-  background-color: #ffffffdc;
   height: 40px;
-  text-align: center;
   align-content: center;
   border-radius: 10px;
   padding: 0;
-  
+  margin: 10px 0 0;
 }
 .settings-box .option-box .colors-list li{
   width: 20px;
@@ -59,10 +61,13 @@ body {
   display: inline-block;
   transition: 0.3s;
 }
+.settings-box .option-box .colors-list li:hover {
+  opacity: 1;
+  padding: 0.5px;
+}
 .settings-box .option-box .colors-list li.active{
   opacity: 1;
-  border: 1px solid black;
-  padding: 1px;
+  padding: 0.5px;
 }
 .settings-box .option-box .colors-list li:first-child {
   background-color: #430801;
@@ -78,6 +83,28 @@ body {
 }
 .settings-box .option-box .colors-list li:nth-child(5) {
   background-color: #8b4a1b;
+}
+.settings-box .random-backgrounds .yes,
+.settings-box .random-backgrounds .no {
+  width: 50px;
+  background-color: var(--main-color);
+  color: #FFF;
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 10px;
+  font-weight: bold;
+  border-radius: 4px;
+  opacity: .5;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.settings-box .random-backgrounds .yes:hover,
+.settings-box .random-backgrounds .no:hover {
+  opacity: 1;
+}
+.settings-box .random-backgrounds span.active {
+  opacity: 1;
 }
 /* End settings Box */
 /* Start Landig */
@@ -144,7 +171,8 @@ body {
 }
 .introduction h1 {
   font-size: 34px;
-  margin: 0 0 12px;
+  margin: 40px 0 0px 40px;
+  line-height: 1.5;
 }
 .introduction h1 span {
   color: var(--main-color);
@@ -159,5 +187,6 @@ body {
   font-size: 14px;
   margin: 30px;
   font-weight: bold;
+  width: 100%;
 }
 /* End Landig */
