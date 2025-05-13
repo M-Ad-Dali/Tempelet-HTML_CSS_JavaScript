@@ -184,7 +184,7 @@ window.onscroll = function () {
   // Window ScrollTop
   let windowScrollTop = this.pageYOffset; // [الجزء اللي انا اعمل فيه سكرول كم بالبكسل]
 
-  if (windowScrollTop < (skillsOffsetTop + skillsOuterHeight - windowHeight)) { // [اذا كان الجزء اللي اعمل فيه سكرول اكبر من (الجزء اللي فوق الكشين + اهايت للسكشن كامل - هايت الويندو كامل)] [هذي المعادلة أول ما ادخل لسكشن المطلوب يتم عمل حدث]
+  if (windowScrollTop > (skillsOffsetTop + skillsOuterHeight - windowHeight)) { // [اذا كان الجزء اللي اعمل فيه سكرول اكبر من (الجزء اللي فوق الكشين + اهايت للسكشن كامل - هايت الويندو كامل)] [هذي المعادلة أول ما ادخل لسكشن المطلوب يتم عمل حدث]
 
     // this.console.log('Skills Section Reached'); // [لما يوصل لسكشن المطلوب اعرض الريالة هذي بالكنسل]
 
