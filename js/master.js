@@ -26,6 +26,43 @@ let backgroundOption = true;
 // Variable To Control The Bacground Interval
 let backgroundInterval;
 
+// Check If There's Local Storage Random Bacground Itme
+let backgroundLocalItem = localStorage.getItem("background_option");
+
+// Check If Random Bacground Local Storage Is Not Empty
+if (backgroundLocalItem !== null) {
+
+  // console.log(typeof(backgroundLocalItm)); // string
+  
+  if (backgroundLocalItem === 'true') {
+    
+    backgroundOption = true;
+    
+  } else {
+    
+    backgroundOption = false;
+    
+  }
+  console.log(backgroundLocalItem); // false
+
+  // Remove Active Class From All span
+  document.querySelectorAll(".random-backgrounds span").forEach(e => {
+
+    e.classList.remove("active");
+
+  });
+
+  if (backgroundLocalItem === 'true') {
+
+    document.querySelector(".random-backgrounds .yes").classList.add("active");
+
+  } else {
+
+    document.querySelector(".random-backgrounds .no").classList.add("active");
+
+  }
+
+}
 
 // Toggle Spin Class On Icon
 document.querySelector(".toggle-settings .gear").onclick = function () {
@@ -78,21 +115,29 @@ randomBackEl.forEach(span => {
     span.classList.remove("active");
     });
 
-    // Add Class Active
+    // Add Active Class On Self
     span.classList.add("active");
 
     if (e.target.dataset.background === 'yes') {
 
       backgroundOption = true;
+
       randomizeImgs();
 
+      localStorage.setItem("background_option", true);
+      
     } else {
-
+      
       backgroundOption = false;
+
       clearInterval(backgroundInterval);
 
+      localStorage.setItem("background_option", false);
+
     }
+
   });
+
 });
 
 // Select Landing For Element
@@ -121,3 +166,37 @@ backgroundInterval = setInterval(() => {
 }
 
 randomizeImgs();
+
+// Select Skills Selector
+let skillsOldYemen = document.querySelector(".old-yemen");
+
+window.onscroll = function () {
+
+  // Skills Offset Top
+  let skillsOffsetTop = skillsOldYemen.offsetTop; // [الجزء اللي فوق السكشن اللي ندور عليه يعرضلك كم هو بالبكسل]
+
+  // Skills Outer Height
+  let skillsOuterHeight = skillsOldYemen.offsetHeight; // [تحسب هيت وبادنج وكل شيء لسكشن اللي انا فيه بالبكسل]
+
+  // Window Height
+  let windowHeight = this.innerHeight; // [الهايت حق الويندو كامل]
+
+  // Window ScrollTop
+  let windowScrollTop = this.pageYOffset; // [الجزء اللي انا اعمل فيه سكرول كم بالبكسل]
+
+  if (windowScrollTop < (skillsOffsetTop + skillsOuterHeight - windowHeight)) { // [اذا كان الجزء اللي اعمل فيه سكرول اكبر من (الجزء اللي فوق الكشين + اهايت للسكشن كامل - هايت الويندو كامل)] [هذي المعادلة أول ما ادخل لسكشن المطلوب يتم عمل حدث]
+
+    // this.console.log('Skills Section Reached'); // [لما يوصل لسكشن المطلوب اعرض الريالة هذي بالكنسل]
+
+    let allSkills = document.querySelectorAll(".skill-box .skill-progress span");
+
+    allSkills.forEach(skill => {
+
+      skill.style.width = skill.dataset.progress; // [[dataset.progriss = data-progress="96%"] عند التعامل مع الداتا ست تكتب الكلمة اللتي بعد الاتا ست مثل]
+
+    });
+
+  }
+
+  // console.log(windowHeight);
+};

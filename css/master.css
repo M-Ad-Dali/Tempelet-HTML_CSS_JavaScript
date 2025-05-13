@@ -1,8 +1,16 @@
 :root {
-  --main-color: #430801;
+  --main-color: #9b321b;
 }
 body {
   font-family: "Open Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  width: 1170px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
 }
 /* Start settings Box */
 .settings-box {
@@ -70,7 +78,7 @@ body {
   padding: 0.5px;
 }
 .settings-box .option-box .colors-list li:first-child {
-  background-color: #430801;
+  background-color: #9b321b;
 }
 .settings-box .option-box .colors-list li:nth-child(2) {
   background-color: #1a1a1a;
@@ -136,6 +144,11 @@ body {
   font-size: 20px;
   padding: 15px;
   font-weight: bold;
+  cursor: pointer;
+}
+.header .logo:hover span {
+  transition: 0.3s;
+  color: var(--main-color);
 }
 .header .links {
   list-style: none;
@@ -190,3 +203,76 @@ body {
   width: 100%;
 }
 /* End Landig */
+/* Start About Us */
+.about-us {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+}
+.about-us .info-box {
+  flex: 1;
+  padding: 30px;
+}
+.about-us .info-box h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 10px;
+}
+.about-us .info-box p {
+  line-height: 1.8;
+  color: #767676;
+  margin: 0;
+}
+.about-us .image-box {
+  flex: 1;
+  text-align: center;
+  align-content: center;
+}
+.about-us .image-box img {
+  width: 200px;
+}
+/* End About Us */
+/* Start Skills Old Yemen */
+.old-yemen {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #EEE;
+}
+.old-yemen h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 50px;
+  text-align: center;
+}
+.old-yemen .skill-box {
+  background-color: #FFF;
+  display: flex;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.old-yemen .skill-box .skill-name {
+  font-weight: bold;
+  width: 200px;
+  text-align: center;
+  line-height: 30px;
+}
+.old-yemen .skill-box .skill-progress {
+  height: 30px;
+  width: 100%;
+  background-color: #f6f6f6;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+.old-yemen .skill-box .skill-progress span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--main-color);
+  transition: all 0.5s; /* [كل اعناصر تتحرك بطريقة ناعمة] */
+}
+/* End Skills Old Yemen */
