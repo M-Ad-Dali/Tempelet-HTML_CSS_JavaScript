@@ -247,6 +247,9 @@ ourGallery.forEach(img => {
     // Create The Image
     let popupImage = document.createElement("img");
 
+    // Add Class To The Popup Img
+    popupImage.className = 'popup-image'
+
     // Set Image Source
     popupImage.src = img.src;
 
@@ -278,10 +281,11 @@ ourGallery.forEach(img => {
 // -Close Popup
   document.addEventListener("click", function (e) {
 
-  if (e.target.className == 'close-button') {
+  if (e.target.className === 'close-button' || e.target.className === 'popup-overlay') {
 
   // Remove The Current Popup
-  e.target.parentNode.remove();
+  // e.target.parentNode.remove(); [تستخدم في حال كنت بمسح عن طريق السبان اكس]
+  document.querySelector(".popup-box").remove();
 
   // Remove Overlay
   document.querySelector(".popup-overlay").remove();
