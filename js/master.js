@@ -85,12 +85,14 @@ colorsLi.forEach(li => {
   li.addEventListener("click", (e) => {
 
     // Remove Active Class From All Colors List Itme
-    colorsLi.forEach(li => {
-    li.classList.remove("active");
-    });
+    // colorsLi.forEach(li => { [كود مكرر تكم استبدالة بفنكشن]
+    // li.classList.remove("active");
+    // });
 
     // Add Class Active
-    li.classList.add("active");
+    // li.classList.add("active");
+
+    handleActive(e); // [الكود المستدعاه من لفنكشن]
 
     // Set Color On Root
     document.documentElement.style.setProperty('--main-color', e.target.dataset.color);
@@ -111,12 +113,13 @@ randomBackEl.forEach(span => {
   span.addEventListener("click", (e) => {
 
     // Remove Active Class From All Colors List Itme
-    randomBackEl.forEach(span => {
-    span.classList.remove("active");
-    });
+    // randomBackEl.forEach(span => { [كود مكرر تكم استبدالة بفنكشن]
+    // span.classList.remove("active");
+    // });
 
     // Add Active Class On Self
-    span.classList.add("active");
+    // span.classList.add("active");
+    handleActive(e); // [الكود المستدعاه من لفنكشن]
 
     if (e.target.dataset.background === 'yes') {
 
@@ -296,16 +299,75 @@ ourGallery.forEach(img => {
 // Select All Bullets
 const allBullets = document.querySelectorAll(".nav-bullets .bullet");
 
-allBullets.forEach(bullet => {
+// allBullets.forEach(bullet => { // [أكواد مكررة عملنا لها فنكشن وتم إلغائها]
 
-  bullet.addEventListener("click", (e) => {
+//   bullet.addEventListener("click", (e) => {
+
+//     document.querySelector(e.target.dataset.section).scrollIntoView({
+
+//       behavior: 'smooth',
+
+//     });
+
+//   });
+
+// });
+
+// Select All Links
+const allLinks = document.querySelectorAll(".links a");
+
+// allLinks.forEach(link => { // [أكواد مكررة عملنا لها فكشن وتم إلغائها]
+
+  
+//   link.addEventListener("click", (e) => {
+
+//     e.preventDefault();
+
+//     document.querySelector(e.target.dataset.section).scrollIntoView({
+
+//       behavior: 'smooth',
+
+//     });
+
+//   });
+
+// });
+
+
+function ScrollToLinks(elements) { // [الفانكشن البديل]
+
+  elements.forEach(ele => {
+
+    ele.addEventListener("click", (e) => {
+
+    e.preventDefault();
 
     document.querySelector(e.target.dataset.section).scrollIntoView({
 
       behavior: 'smooth',
 
+      });
+
     });
 
   });
 
-});
+}
+
+ScrollToLinks(allBullets);
+ScrollToLinks(allLinks);
+
+// Handle Active State
+
+function handleActive(event) {
+
+  // Remove Active Class From All Childrens
+  event.target.parentElement.querySelectorAll(".active").forEach(element => { // [الفنكشن البديلة]
+
+    element.classList.remove("active");
+
+  });
+
+  // Add Active Class On Self
+  event.target.classList.add("active");
+}

@@ -89,8 +89,8 @@ body {
 .settings-box .option-box .colors-list li:nth-child(5) {
   background-color: #8b4a1b;
 }
-.settings-box .random-backgrounds .yes,
-.settings-box .random-backgrounds .no {
+.settings-box .option-box .yes,
+.settings-box .option-box .no {
   width: 50px;
   background-color: var(--main-color);
   color: #FFF;
@@ -104,11 +104,11 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-.settings-box .random-backgrounds .yes:hover,
-.settings-box .random-backgrounds .no:hover {
+.settings-box .option-box .yes:hover,
+.settings-box .option-box .no:hover {
   opacity: 1;
 }
-.settings-box .random-backgrounds span.active {
+.settings-box .option-box span.active {
   opacity: 1;
 }
 /* End settings Box */
@@ -220,8 +220,7 @@ body {
   text-decoration: none;
   transition: 0.3s;
 }
-.header .links li a:hover, 
-.header .links li a.active {
+.header .links li a:hover {
   color: var(--main-color);
   font-size: 16px;
   font-weight: bold;
