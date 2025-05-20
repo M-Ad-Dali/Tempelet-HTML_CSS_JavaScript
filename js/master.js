@@ -427,3 +427,61 @@ bulletsSpan.forEach(span => {
   });
 
 });
+
+// Reset Button
+document.querySelector(".reset-option").onclick = function () {
+
+  // Reset LocalStorage All
+  // localStorage.clear();
+
+  // Reset LocalStorage For Itme
+  localStorage.removeItem("color_option");
+  localStorage.removeItem("background_option");
+  localStorage.removeItem("bullets_option");
+
+  window.location.reload();
+
+};
+
+// Toggle Menu
+let toggleBtn = document.querySelector(".toggle-menu");
+let tLinks = document.querySelector(".links");
+
+toggleBtn.onclick = function (e) {
+
+  // Stop Propagation On Links
+  e.stopPropagation()
+
+  // Toggle Class "menu-active" On Button
+  this.classList.toggle("menu-active");
+
+  // Toggle Class "Open" On Button
+  tLinks.classList.toggle("open");
+
+}
+
+// Stop Propagation On Menu
+  tLinks.onclick = function (e) {
+
+    e.stopPropagation()
+
+  }
+
+// -Close Menu On Body
+  document.addEventListener("click", function (e) {
+
+  if (e.target !== toggleBtn && e.target !== tLinks) {
+
+  // Check If Menu Is Open
+  if (tLinks.classList.contains("open")) {
+
+      // Toggle Class "menu-active" On Button
+      toggleBtn.classList.toggle("menu-active");
+
+      // Toggle Class "Open" On Button
+      tLinks.classList.toggle("open");
+
+  }
+
+  };
+});

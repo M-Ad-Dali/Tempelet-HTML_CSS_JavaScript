@@ -45,6 +45,7 @@
           <span class="no" data-display="hide">No</span>
         </div>
       </div>
+      <button class="reset-option">Reset Option</button>
     </div>
   </div>
   <!-- End Settings -->
@@ -68,6 +69,9 @@
     <div class="bullet" data-section=".testimonials">
       <div class="tooltip">Testimonials</div>
     </div>
+    <div class="bullet" data-section=".contact">
+      <div class="tooltip">Contact Us</div>
+    </div>
   </div>
   <!-- End New Bulets -->
   <!-- Start Landing -->
@@ -76,14 +80,22 @@
     <div class="container">
       <div class="header">
         <div class="logo">YI<span>OO</span>TA</div>
-        <ul class="links">
-          <li><a href="#" data-section=".about-us">About</a></li>
-          <li><a href="#" data-section=".old-yemen">Old Yemen</a></li>
-          <li><a href="#" data-section=".gallery">Gallery</a></li>
-          <li><a href="#" data-section=".history">History</a></li>
-          <li><a href="#" data-section=".features">Features</a></li>
-          <li><a href="#" data-section=".testimonials">Testimonials</a></li>
-        </ul>
+          <div class="links-container">
+            <ul class="links">
+            <li><a href="#" data-section=".about-us">About</a></li>
+            <li><a href="#" data-section=".old-yemen">Old Yemen</a></li>
+            <li><a href="#" data-section=".gallery">Gallery</a></li>
+            <li><a href="#" data-section=".history">History</a></li>
+            <li><a href="#" data-section=".features">Features</a></li>
+            <li><a href="#" data-section=".testimonials">Testimonials</a></li>
+            <li><a href="#" data-section=".contact">Contact Us</a></li>
+            </ul>
+            <button class="toggle-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
       </div>
     </div>
     <div class="introduction">
@@ -347,7 +359,7 @@
         </div>
         <h4>Architectural Heritage</h4>
         <p>
-         The architectural legacy of ancient Yemen is remarkable.
+          The architectural legacy of ancient Yemen is remarkable.
         </p>
       </div>
       <div class="feat-box">
@@ -365,43 +377,62 @@
   <!-- End Features -->
   <!-- Start Testimonials -->
   <div class="testimonials">
-    <div class="container">
-      <h2>Testimonials For Yemen</h2>
-      <div class="ts-box">
-        <p>
-          I Am Glad To Cisit The Beautiful Contry, Iloved The Way I built The Old City Of Sana'a And IndustryPictursque Ambiance.
-        </p>
-        <div class="person-info">
-          <img src="https:// placehold.it/80/DDD" alt="">
-          <h4>Joe Hattab</h4>
-          <p>Yutuber is A Tourist</p>
+    <h2>Testimonials For Yemen</h2>
+      <div class="container">
+        <div class="ts-box">
+          <p>
+            I Am Glad To Cisit The Beautiful Contry, Iloved The Way I built The Old City Of Sana'a And IndustryPictursque Ambiance.
+          </p>
+          <div class="person-info">
+            <img src="https:// placehold.it/80/DDD" alt="">
+            <h4>Joe Hattab</h4>
+            <p>Yutuber is A Tourist</p>
+          </div>
+        </div>
+        <div class="ts-box">
+          <p>
+            I love the Civilzed cities that preserve their ancient culture, i like Yemen and i will visit them again.
+          </p>
+          <div class="person-info">
+            <img src="https:// placehold.it/80/EEE" alt="">
+            <h4>Osama Alhoriby</h4>
+            <p>Porfessor Of Web Design</p>
+          </div>
+        </div>
+        <div class="ts-box">
+          <p>
+            I visited Socotra Island, and it was one of the most beautiful islands I hav evre been to in my life.
+          </p>
+          <div class="person-info">
+            <img src="https:// placehold.it/80/AAA" alt="">
+            <h4>Mohammed Ibrahim</h4>
+            <p>Cadiologist</p>
+          </div>
         </div>
       </div>
-      <div class="ts-box">
-        <p>
-          I love the Civilzed cities that preserve their ancient culture, i like Yemen and i will visit them again.
-        </p>
-        <div class="person-info">
-          <img src="https:// placehold.it/80/EEE" alt="">
-          <h4>Osama Alhoriby</h4>
-          <p>Porfessor Of Web Design</p>
-        </div>
-      </div>
-      <div class="ts-box">
-        <p>
-          I visited Socotra Island, and it was one of the most beautiful islands I hav evre been to in my life.
-        </p>
-        <div class="person-info">
-          <img src="https:// placehold.it/80/AAA" alt="">
-          <h4>Mohammed Ibrahim</h4>
-          <p>Cadiologist</p>
-        </div>
-      </div>
-    </div>
     <div class="clearfix"></div>
   </div>
   <!-- End Testimonials -->
-  <!--  -->
+  <!-- Start Contact Us -->
+  <div class="contact">
+    <div class="overlay"></div>
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form action="">
+        <div class="left">
+          <input type="text" placeholder="Your Name" name="usernamw">
+          <input type="text" placeholder="Your Phone" name="phone">
+          <input type="email" placeholder="Your Email" name="email">
+          <input type="text" placeholder="Subject" name="subject">
+        </div>
+        <div class="right">
+          <textarea name="message" placeholder="Your Message"></textarea>
+          <input type="submit" value="Send">
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- End Contact Us -->
   <script src="js/master.js"></script>
 </body>
 </html>

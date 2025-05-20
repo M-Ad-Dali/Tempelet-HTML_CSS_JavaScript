@@ -1,12 +1,13 @@
 :root {
-  --main-color: #9b321b;
+  --main-color: #430801;
 }
 body {
   font-family: "Open Sans", sans-serif;
 }
 .container {
-  max-width: 1170px;
-  width: 100%;
+  /* width: 1170px; */
+  padding-left: 15px;
+  padding-right: 15px;
   margin: auto;
 }
 /* Start settings Box */
@@ -75,7 +76,7 @@ body {
   padding: 0.5px;
 }
 .settings-box .option-box .colors-list li:first-child {
-  background-color: #9b321b;
+  background-color: #430801;
 }
 .settings-box .option-box .colors-list li:nth-child(2) {
   background-color: #1a1a1a;
@@ -110,6 +111,22 @@ body {
 }
 .settings-box .option-box span.active {
   opacity: 1;
+}
+.settings-box .reset-option {
+  background-color: #B71C1C;
+  border: none;
+  width: 178px;
+  margin: 10px auto;
+  display: block;
+  color: #FFF;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 4px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.settings-box .reset-option:hover {
+  background-color: #9c1717;
 }
 /* End settings Box */
 /* Start Nav Bulets */
@@ -203,13 +220,14 @@ body {
   transition: 0.3s;
   color: var(--main-color);
 }
-.header .links {
-  list-style: none;
+.header .links-container {
   width: 100%;
   text-align: right;
+}
+.header .links {
+  list-style: none;
   padding-left: 0;
-  padding-right: 20px;
-  font-size: 15px;
+  transition: .3s;
 }
 .header .links li {
   display: inline-block;
@@ -220,10 +238,38 @@ body {
   text-decoration: none;
   transition: 0.3s;
 }
-.header .links li a:hover {
+.header .links li a:hover,
+.header .links li a.active {
   color: var(--main-color);
   font-size: 16px;
   font-weight: bold;
+}
+.header .toggle-menu {
+  background: none;
+  border: none;
+  width: 40px;
+  cursor: pointer;
+  margin-top: 15px;
+  display: none;
+  position: relative;
+}
+.header .toggle-menu.menu-active::before {
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #FFF transparent;
+  position: absolute;
+  bottom: -16px;
+  left: 10px;
+}
+.header .toggle-menu:focus {
+  outline: none;
+}
+.header .toggle-menu span {
+  display: block;
+  background-color: #FFF;
+  height: 4px;
+  margin-bottom: 4px;
 }
 .introduction {
   position: absolute;
@@ -233,6 +279,7 @@ body {
   z-index: 2;
   color: #FFF;
   text-align: center;
+  z-index: 1;
 }
 .introduction h1 {
   font-size: 34px;
@@ -253,6 +300,40 @@ body {
   margin: 30px;
   font-weight: bold;
   width: 100%;
+}
+@media (max-width: 991px) {
+  .header .links {
+    display: none;
+  }
+  .header .links.open {
+    background-color: #FFF;
+    padding: 10px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    border-radius: 4px;
+    text-align: left;
+  }
+  .header .links.open li {
+    color: var(--main-color);
+    font-weight: bold;
+    display: block;
+    margin: 10px;
+    transition: .3s;
+    cursor: pointer;
+  }
+  /* header .links.open li:hover {
+    background-color: #7070704c;
+  } */
+  .header .links.open li a {
+    color: var(--main-color);
+    font-weight: bold;
+  }
+  .header .toggle-menu {
+    display: inline-block;
+  }
 }
 /* End Landig */
 /* Start About Us */
@@ -364,6 +445,11 @@ body {
   border: 1px solid #CCC;
   margin: 5px;
   cursor: pointer;
+  opacity: 0.9;
+  transition: 0.3s;
+}
+.gallery .images-box img:hover {
+  opacity: 1;
 }
 .popup-overlay {
   position: fixed;
@@ -623,7 +709,7 @@ body {
   font-weight: bold;
   font-size: 30px;
   color: #FFF;
-  margin: 0 0 30px;
+  margin: 0px 100px 40px;
   text-align: left;
   position: relative;
   z-index: 2;
@@ -635,7 +721,6 @@ body {
   float: left;
   background-color: #FFF;
   padding: 20px;
-  font-size: 22px;
   border-radius: 8px;
 }
 .testimonials .ts-box:not(:last-child) {
@@ -644,7 +729,7 @@ body {
 .testimonials .ts-box > p {
   margin: 0 0 20px;
   line-height: 1.5;
-  font-size: 18px;
+  font-size: 16px;
   color: #707070;
   font-style: italic;
 }
@@ -670,3 +755,117 @@ body {
   font-size: 16px;
 }
 /* End Testimonials */
+/* Start Contact Us */
+.contact {
+  background-image: url('../imgs/contact.jpg');
+  background-size: cover;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+}
+.contact .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255 255 255 / 60%);
+}
+.contact .container {
+  position: relative;
+  z-index: 2;
+}
+.contact h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 60px;
+  text-align: center;
+}
+.contact form {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  gap: 4%;
+}
+.contact form .left {
+  width: 50%;
+}
+.contact form .right {
+  width: 48%;
+}
+.contact form input:not([type="submit"]),
+.contact form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #CCC;
+  background-color: rgba(218, 218, 218, 0.8);
+}
+.contact form input:not([type="submit"]):focus,
+.contact form textarea:focus {
+  outline: 1px solid var(--main-color);
+}
+.contact form input {
+  height: 25px;
+}
+.contact form textarea {
+  height: 150px;
+}
+.contact form input[type="submit"] {
+  padding: 10px;
+  width: calc(100% + 20px);
+  border-color: transparent;
+  background-color: var(--main-color);
+  color: #FFF;
+  cursor: pointer;
+  height: 45px;
+  opacity: 0.95;
+}
+.contact form input[type="submit"]:hover {
+  opacity: 1;
+}
+.contact form input:not([type="submit"]):focus::-webkit-input-placeholder,
+.contact form textarea:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: .3s;
+}
+.contact form input:not([type="submit"]):focus::-ms-input-placeholder,
+.contact form textarea:focus::-ms-input-placeholder{
+  opacity: 0;
+  transition: .3s;
+}
+.contact form input:not([type="submit"]):focus::placeholder,
+.contact form textarea:focus::placeholder {
+  opacity: 0;
+  transition: .3s;
+}
+/* End Contact Us */
+/* Start Grid System */
+@media (max-width: 577px) { /* Small Devices => Landscape Phones */
+  .container {
+    max-width: 350px;
+  }
+}
+@media (min-width: 576px) { /* Small Devices => Landscape Phones */
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) { /* Medium Devices => Tablets */
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) { /* Disktops */
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) { /* Large Screens */
+  .container {
+    max-width: 1140px;
+  }
+}
+/* End Grid System */
