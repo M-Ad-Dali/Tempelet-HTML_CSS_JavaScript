@@ -190,7 +190,7 @@ window.onscroll =  function () {
 
   // console.log(windowScrollTop)
   // console.log(skillsOffsetTop + skillsOuterHeight - windowHeight)
-  if (windowScrollTop > (skillsOffsetTop + skillsOuterHeight - windowHeight - 1)) { // [اذا كان الجزء اللي اعمل فيه سكرول اكبر من (الجزء اللي فوق الكشين + اهايت للسكشن كامل - هايت الويندو كامل)] [هذي المعادلة أول ما ادخل لسكشن المطلوب يتم عمل حدث]
+  if (windowScrollTop > (skillsOffsetTop + skillsOuterHeight - windowHeight)) { // [اذا كان الجزء اللي اعمل فيه سكرول اكبر من (الجزء اللي فوق الكشين + اهايت للسكشن كامل - هايت الويندو كامل)] [هذي المعادلة أول ما ادخل لسكشن المطلوب يتم عمل حدث]
 
     // this.console.log('Skills Section Reached'); // [لما يوصل لسكشن المطلوب اعرض الريالة هذي بالكنسل]
 
