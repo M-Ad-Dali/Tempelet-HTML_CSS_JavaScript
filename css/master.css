@@ -325,6 +325,7 @@ body {
     color: var(--main-color);
     font-weight: bold;
     display: block;
+    text-align: center;
     margin: 10px;
     transition: .3s;
     cursor: pointer;
